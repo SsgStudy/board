@@ -11,7 +11,7 @@ public class ClientSocketTest {
     public static void main(String[] args) {
     //서버연결을 위한 클라이언트 소켓
         try{
-    Socket socket = new Socket("127.0.0.1",50002);
+    Socket socket = new Socket("127.0.0.1",50001);
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
             bw.write("가나다라마바사\n");
 

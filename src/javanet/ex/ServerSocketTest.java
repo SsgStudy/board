@@ -1,6 +1,7 @@
 package javanet.ex;
 
 import java.io.*;
+import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -8,7 +9,7 @@ public class ServerSocketTest {
     public static void main(String[] args) {
         //서버소켓
         try{
-            ServerSocket serverSocket = new ServerSocket(50002);
+            ServerSocket serverSocket = new ServerSocket(50001);
             Socket socket = serverSocket.accept();
 
             BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -20,7 +21,7 @@ public class ServerSocketTest {
 
             bw.flush();
 
-            socket.close();
+            serverSocket.close();
             br.close();
             bw.close();
 
